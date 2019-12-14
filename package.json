@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-plugin-loadable-components",
+  "name": "gatsby-plugin-loadable-components-ssr",
   "description": "Server-side rendering loadable components in your gatsby application",
   "version": "1.0.0",
   "author": "Hector del Rio <public.hector.del.rio@gmail.com>",
   "bugs": {
-    "url": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components/issues"
+    "url": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components-ssr/issues"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.6",
@@ -27,14 +27,14 @@
     "@loadable/component",
     "@loadable/server"
   ],
-  "homepage": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components",
+  "homepage": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components-ssr",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.12.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components.git"
+    "url": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components-ssr.git"
   },
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",

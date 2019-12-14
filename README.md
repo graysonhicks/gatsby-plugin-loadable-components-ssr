@@ -4,7 +4,7 @@ Server-side rendering [loadable components](https://loadable-components.com/) in
 
 ## Installation
 
-`npm install --save gatsby-plugin-loadable-components`
+`npm install --save gatsby-plugin-loadable-components-ssr`
 
 ## Problem
 
@@ -14,18 +14,18 @@ must be follow to implement server-side rendering in your app. However, it's not
 ## Solution
 
 This plugin implements the steps described in the link above using gatsby's APIs, so you can use it only by adding 
-`gatsby-plugin-loadable-components` in your list of gatsby plugins.
+`gatsby-plugin-loadable-components-ssr` in your list of gatsby plugins.
 
 ## Usage
 
-Simply add `gatsby-plugin-loadable-components` to the plugins array in `gatsby-config.js`.
+Simply add `gatsby-plugin-loadable-components-ssr` to the plugins array in `gatsby-config.js`.
 
 ```javascript
 // gatsby-config.js
 
 module.exports = {
   plugins: [
-    'gatsby-plugin-loadable-components'
+    gatsby-plugin-loadable-components-ssr
   ],
 }
 ```
