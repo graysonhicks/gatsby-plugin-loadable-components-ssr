@@ -9,7 +9,7 @@ Server-side rendering [loadable components](https://loadable-components.com/) in
 ## Problem
 
 As described in [the documentation](https://loadable-components.com/docs/server-side-rendering/) a series of steps 
-must be follow to implement server-side rendering in your app. However, it's not trivial to apply them to a gatsby application.
+must be followed to implement server-side rendering in your app. However, it's not trivial to apply them to a gatsby application.
 
 ## Solution
 
