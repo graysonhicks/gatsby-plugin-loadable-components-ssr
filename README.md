@@ -28,7 +28,7 @@ module.exports = {
 }
 ```
 
-# My `gatsby-browser.js` already implements `replaceHydrateFunction` API
+## My `gatsby-browser.js` already implements `replaceHydrateFunction` API
 
 This plugin uses `replaceHydrateFunction` API. If your application also implements this API (`gatsby-browser.js`)
 make sure you wrap your implementation with `loadableReady(() => ...)`. 
