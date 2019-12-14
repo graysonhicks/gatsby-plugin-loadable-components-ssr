@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-loadable-components",
-  "description": "Gatsby plugin for using @loadable/component with Gatsby's SSR",
+  "description": "Server-side rendering loadable components in your gatsby application",
   "version": "1.0.0",
   "author": "Hector del Rio <public.hector.del.rio@gmail.com>",
   "bugs": {
