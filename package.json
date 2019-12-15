@@ -9,7 +9,6 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "@loadable/babel-plugin": "^5.11.0",
-    "@loadable/component": "^5.11.0",
     "@loadable/server": "^5.11.0",
     "@loadable/webpack-plugin": "^5.7.1",
     "react-dom": "^16.12.0"
@@ -30,7 +29,8 @@
   "homepage": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components-ssr",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.12.1"
+    "gatsby": "^2.12.1",
+    "@loadable/component": "^5.11.0"
   },
   "repository": {
     "type": "git",

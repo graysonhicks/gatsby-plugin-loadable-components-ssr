@@ -6,6 +6,10 @@ Server-side rendering [loadable components](https://loadable-components.com/) in
 
 `npm install --save gatsby-plugin-loadable-components-ssr`
 
+This plugin also requires `@loadable/component` as a peer dependency:
+
+`npm install --save @loadable/component`
+
 ## Problem
 
 As described in [the documentation](https://loadable-components.com/docs/server-side-rendering/) a series of steps 
