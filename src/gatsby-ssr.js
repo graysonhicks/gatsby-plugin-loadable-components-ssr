@@ -18,4 +18,7 @@ export const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
 
   // Set script and style tags at the end of the document to parse the assets.
   setPostBodyComponents([...extractor.getScriptElements(), ...extractor.getStyleElements()]);
+
+  // Reset collected chunks after each page is rendered
+  extractor.chunks = [];
 };
