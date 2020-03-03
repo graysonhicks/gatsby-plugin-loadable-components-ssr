@@ -3,12 +3,14 @@ import { loadableReady } from '@loadable/component';
 
 export const replaceHydrateFunction = (_, options) => (element, container, callback) => {
   loadableReady(() => {
-    const renderFn = options.renderFn
-        ? options.renderFn
+    const renderFn = typeof options.useHydrate === 'undefined'
         // Using ReactDOM.hydrate on develop will throw an error in console
-        : process.env.GATSBY_BUILD_STAGE.includes('develop')
+        ? process.env.GATSBY_BUILD_STAGE.includes('develop')
             ? render
-            : hydrate;
+            : hydrate
+        : !!options.useHydrate
+            ? hydrate
+            : render;
 
     renderFn(element, container, callback);
   });
