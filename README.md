@@ -29,7 +29,16 @@ Simply add `gatsby-plugin-loadable-components-ssr` to the plugins array in `gats
 
 module.exports = {
   plugins: [
-    gatsby-plugin-loadable-components-ssr
+    'gatsby-plugin-loadable-components-ssr',
+    // OR
+    {
+        resolve: `gatsby-plugin-loadable-components-ssr`,
+        options: {
+            // The function called on replaceHydrateFunction.
+            // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
+            renderFn: ReactDOM.render,
+        },
+    }
   ],
 }
 ```

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-loadable-components-ssr",
   "description": "Server-side rendering loadable components in your gatsby application",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "author": "Hector del Rio <public.hector.del.rio@gmail.com>",
   "bugs": {
     "url": "https://github.com/hector-del-rio/gatsby-plugin-loadable-components-ssr/issues"
