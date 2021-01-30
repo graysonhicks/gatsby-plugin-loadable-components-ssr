@@ -3,7 +3,7 @@ import LoadablePlugin from '@loadable/webpack-plugin';
 import { statsFilename, statsPath } from './constants';
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage === 'build-javascript') {
+  if (stage === "build-javascript" || stage === "develop") {
     actions.setWebpackConfig({
       plugins: [new LoadablePlugin({ filename: statsFilename })],
     });
