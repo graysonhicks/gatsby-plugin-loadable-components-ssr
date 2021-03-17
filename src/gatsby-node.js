@@ -1,11 +1,16 @@
 import { unlinkSync } from 'fs';
 import LoadablePlugin from '@loadable/webpack-plugin';
-import { statsPath } from './constants';
+import { statsFilename, statsPath } from './constants';
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
   if (stage === "build-javascript" || stage === "develop") {
     actions.setWebpackConfig({
-      plugins: [new LoadablePlugin({ filename: statsPath, writeToDisk: true })]
+      plugins: [
+        new LoadablePlugin({
+          filename: stage === "develop" ? `public/${statsFilename}` : statsFilename,
+          writeToDisk: true,
+        }),
+      ],
     });
   }
 };
