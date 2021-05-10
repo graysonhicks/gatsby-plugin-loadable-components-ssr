@@ -5,7 +5,7 @@ import { statsPath } from './constants';
 export const onCreateWebpackConfig = ({ actions, stage }) => {
   if (stage === "build-javascript" || stage === "develop") {
     actions.setWebpackConfig({
-      plugins: [new LoadablePlugin({ filename: statsPath, writeToDisk: true })]
+      plugins: [new LoadablePlugin({ filename: statsPath })]
     });
   }
 };
