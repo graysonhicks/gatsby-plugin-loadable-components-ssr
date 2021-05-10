@@ -1,4 +1,4 @@
-import { unlinkSync } from 'fs';
+import { existsSync, unlinkSync } from 'fs';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import { statsPath } from './constants';
 
@@ -16,5 +16,7 @@ export const onCreateBabelConfig = ({ actions }) => {
 
 export const onPostBuild = () => {
   // Clean after ourselves
-  unlinkSync(statsPath);
+  if (existsSync(statsPath)) {
+    unlinkSync(statsPath);
+  }
 };
