@@ -8,11 +8,21 @@ const statsPath = path.join(
 )
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage === "build-javascript" || stage === "develop") {
+  if (
+    stage === "build-javascript" ||
+    stage === "develop" ||
+    stage === "develop-html"
+  ) {
     actions.setWebpackConfig({
       plugins: [
         new LoadablePlugin({
-          filename: statsPath,
+          filename:
+            stage === "develop"
+              ? statsPath
+              : path.join(
+                  process.cwd(),
+                  "/loadable-stats-build-javascript.json"
+                ),
           writeToDisk: true,
         }),
       ],
