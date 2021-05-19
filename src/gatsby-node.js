@@ -16,13 +16,7 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
     actions.setWebpackConfig({
       plugins: [
         new LoadablePlugin({
-          filename:
-            stage === "develop"
-              ? statsPath
-              : path.join(
-                  process.cwd(),
-                  "/loadable-stats-build-javascript.json"
-                ),
+          filename: statsPath,
           writeToDisk: true,
         }),
       ],
