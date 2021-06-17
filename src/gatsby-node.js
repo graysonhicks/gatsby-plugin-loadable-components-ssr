@@ -29,6 +29,10 @@ export const onCreateBabelConfig = ({ actions }) => {
 }
 
 export const onPostBuild = () => {
-  // Clean after ourselves
-  unlinkSync(statsPath)
+  try {
+    // Clean after ourselves
+    unlinkSync(statsPath)
+  } catch (e) {
+    // Ignore as we just want to avoid crashing a build.
+  }
 }
