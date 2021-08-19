@@ -5,7 +5,7 @@ import LoadablePlugin from "@loadable/webpack-plugin"
 const loadableStatsName = "loadable-stats-build-javascript.json";
 const statsPath = path.join(
   process.cwd(),
-  `/public/${loadableStatsName}`
+  `/.cache/${loadableStatsName}`
 )
 
 const isWin = process.platform === "win32";
@@ -29,13 +29,4 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
 
 export const onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({ name: "@loadable/babel-plugin" })
-}
-
-export const onPostBuild = () => {
-  try {
-    // Clean after ourselves
-    unlinkSync(statsPath)
-  } catch (e) {
-    // Ignore as we just want to avoid crashing a build.
-  }
 }
