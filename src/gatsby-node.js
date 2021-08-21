@@ -4,9 +4,9 @@ import LoadablePlugin from "@loadable/webpack-plugin"
 
 const isWin = process.platform === "win32";
 
-const loadableStatsRelativePath = "../.cache/loadable-stats-build-javascript.json";
+const loadableStatsName = "loadable-stats-build-javascript.json";
 
-const statsPath = isWin ? loadableStatsRelativePath : _path.default.join(process.cwd(), loadableStatsRelativePath);
+const statsPath = _path.default.join(process.cwd(), `/.cache/${loadableStatsName}`);
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
   if (
@@ -19,6 +19,7 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
         new LoadablePlugin({
           filename: statsPath,
           writeToDisk: true,
+          outputAsset: !isWin
         }),
       ],
     })
