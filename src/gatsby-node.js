@@ -6,7 +6,7 @@ const isWin = process.platform === "win32";
 
 const loadableStatsName = "loadable-stats-build-javascript.json";
 
-const statsPath = _path.default.join(process.cwd(), `/.cache/${loadableStatsName}`);
+const statsPath = path.join(process.cwd(), `/.cache/${loadableStatsName}`);
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
   if (
