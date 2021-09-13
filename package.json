@@ -10,7 +10,7 @@
     "@babel/runtime": "^7.9.6",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/server": "^5.15.0",
-    "@loadable/webpack-plugin": "^5.15.0",
+    "@loadable/webpack-plugin": "^5.15.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
