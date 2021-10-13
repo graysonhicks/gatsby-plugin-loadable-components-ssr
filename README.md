@@ -73,3 +73,7 @@ exports.replaceHydrateFunction = () => {
   }
 }
 ```
+
+## Note on Fully Dynamic Imports
+
+While loadable does support fully dynamic imports (e.g. `const MyDynamic = loadable(() => import(`/components/${myComponentVar}`))`), the plugin currently loses the relationship between that chunk and the webpack mapping so it 404s.  The [workaround is here using a hardcoded 'map' component](https://github.com/graysonhicks/gatsby-plugin-loadable-components-ssr/issues/4#issuecomment-684814893).  This works well, but does not scale as well as fully dynamic as the number of components grows.  There is not a plan to resolve this, as the hope is to deprecate this library when React 18 gets a stable release and you could use the `React.lazy()` pattern [described here](https://www.youtube.com/watch?v=lypEGNEIRKE).
