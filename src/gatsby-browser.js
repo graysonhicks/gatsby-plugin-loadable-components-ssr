@@ -7,7 +7,7 @@ export const replaceHydrateFunction =
       const renderFn =
         typeof options.useHydrate === "undefined"
           ? // Using ReactDOM.hydrate on develop will throw an error in console
-            process.env.GATSBY_BUILD_STAGE.includes("develop")
+            process.env.BUILD_STAGE.includes("develop")
             ? render
             : hydrate
           : !!options.useHydrate
