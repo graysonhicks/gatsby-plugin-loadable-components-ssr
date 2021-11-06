@@ -1,12 +1,9 @@
 import { unlinkSync } from "fs"
-import path from "path"
 import LoadablePlugin from "@loadable/webpack-plugin"
 
-const isWin = process.platform === "win32";
+import { LOADABLE_STATS_FILE_PATH } from "./constant"
 
-const loadableStatsName = "loadable-stats-build-javascript.json";
-
-const statsPath = path.join(process.cwd(), `/.cache/${loadableStatsName}`);
+const isWin = process.platform === "win32"
 
 export const onCreateWebpackConfig = ({ actions, stage }) => {
   if (
@@ -17,9 +14,9 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
     actions.setWebpackConfig({
       plugins: [
         new LoadablePlugin({
-          filename: statsPath,
+          filename: LOADABLE_STATS_FILE_PATH,
           writeToDisk: true,
-          outputAsset: !isWin
+          outputAsset: !isWin,
         }),
       ],
     })
