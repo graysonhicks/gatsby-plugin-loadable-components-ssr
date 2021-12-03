@@ -1,4 +1,5 @@
-import { unlinkSync } from "fs"
+import path from "path";
+
 import LoadablePlugin from "@loadable/webpack-plugin"
 
 import { LOADABLE_STATS_FILE_PATH } from "./constant"
@@ -14,7 +15,7 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
     actions.setWebpackConfig({
       plugins: [
         new LoadablePlugin({
-          filename: LOADABLE_STATS_FILE_PATH,
+          filename: path.join(process.cwd(), LOADABLE_STATS_FILE_PATH),
           writeToDisk: true,
           outputAsset: !isWin,
         }),
