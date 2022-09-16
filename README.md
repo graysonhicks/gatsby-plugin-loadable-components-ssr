@@ -41,6 +41,19 @@ module.exports = {
 }
 ```
 
+## Preloading chunks
+
+By default, this plugin will create `preload` tags for the chunks it creates.  This *can* cause overeaging fetching and inaccurate prioritizing of fetching of the chunks.  You can disable this behavior with the `preloadTags` option.  You can then use a more fine-grained approach with `/* webpackPreload: true */` for known above-the-fold components like heros.
+
+```javascript
+  {
+      resolve: "gatsby-plugin-loadable-components-ssr",
+      options: {
+         preloadTags: false
+      },
+  }
+```
+
 ## My gatsby-browser.js already implements replaceHydrateFunction API
 
 This plugin uses `replaceHydrateFunction` API. If your application also implements this API (`gatsby-browser.js`)
