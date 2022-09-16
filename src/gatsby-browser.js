@@ -8,20 +8,23 @@ const react18 = JSON.stringify(
 export const replaceHydrateFunction =
   (_, options) => (element, container, callback) => {
     if (react18) {
-      const reactDomClient = require(`react-dom/client`)
+      const {
+        hydrateRoot: hydrate,
+        createRoot: render,
+      } = require(`react-dom/client`)
     } else {
-      const reactDomClient = require(`react-dom`)
+      const { hydrate, render } = require(`react-dom`)
     }
     loadableReady(() => {
       const renderFn =
         typeof options.useHydrate === "undefined"
           ? // Using ReactDOM.hydrate on develop will throw an error in console
             process.env.BUILD_STAGE.includes("develop")
-            ? reactDomClient.render
-            : reactDomClient.hydrate
+            ? render
+            : hydrate
           : !!options.useHydrate
-          ? reactDomClient.hydrate
-          : reactDomClient.render
+          ? hydrate
+          : render
 
       renderFn(element, container, callback)
     })
