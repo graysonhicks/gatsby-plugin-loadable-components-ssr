@@ -13,9 +13,14 @@ export const wrapRootElement = ({ element }) => {
   return extractor.collectChunks(element)
 }
 
-export const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
+export const onRenderBody = (
+  { setPostBodyComponents, setHeadComponents },
+  pluginOptions
+) => {
   // Set link rel="preload" tags in the head to start the request asap. This will NOT parse the assets fetched
-  setHeadComponents(extractor.getLinkElements())
+  if (pluginOptions.preloadTags) {
+    setHeadComponents(extractor.getLinkElements())
+  }
 
   // Set script and style tags at the end of the document to parse the assets.
   setPostBodyComponents([
