@@ -8,6 +8,8 @@ Server-side rendering [loadable components](https://loadable-components.com/) in
 
 _Latest version of this plugin for v2 Gatsby is 2.1.0_
 
+_Latest version of this plugin for v3 Gatsby is 3.4.0_
+
 ## Problem
 
 As described in [the documentation](https://loadable-components.com/docs/server-side-rendering/) a series of steps
@@ -53,6 +55,9 @@ By default, this plugin will create `preload` tags for the chunks it creates.  T
       },
   }
 ```
+
+## React 18 and Gatsby 5 Support
+Loadable [does not seem to be planning support for React 18](https://github.com/gregberge/loadable-components/issues/718) and Gatsby v5 will require React 18.  React 18 ships with `React.lazy` which performs the same code-splitting + SSR that we are accomplishing here.  There are no plans to write compatibility for React 18 / Gatsby 5 with this plugin, so the migration path should be one to `React.lazy`.  This should result in an overall simpler implementation, and should be considered a positive that this plugin will no longer be needed.
 
 ## My gatsby-browser.js already implements replaceHydrateFunction API
 
