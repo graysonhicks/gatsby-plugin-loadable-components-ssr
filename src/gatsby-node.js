@@ -39,3 +39,16 @@ export const onCreateWebpackConfig = ({ actions, stage }) => {
 export const onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({ name: "@loadable/babel-plugin" })
 }
+
+export const pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    useHydrate: Joi.boolean()
+      .description(`Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render.
+    Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build`),
+    preloadTags: Joi.boolean()
+      .default(true)
+      .description(
+        `Whether to enable preload links to the chunks created by loadable. Defaults to true.`
+      ),
+  })
+}
